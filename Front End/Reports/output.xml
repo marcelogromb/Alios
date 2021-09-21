@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210921 09:25:30.387" rpa="false" schemaversion="2">
+<suite id="s1" name="Testes" source="C:\Alios\Front End\Testes">
+<suite id="s1-s1" name="testsCases" source="C:\Alios\Front End\Testes\testsCases.robot">
+<test id="s1-s1-t1" name="Login com usuário bloqueado e validar a mensagem de bloqueio exibida">
+<kw name="Acessar URL" library="base">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210921 09:25:30.741" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20210921 09:25:30.741" endtime="20210921 09:25:34.680"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:30.740" endtime="20210921 09:25:34.681"/>
+</kw>
+<kw name="Login com usuário bloqueado" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USUARIO}</arg>
+<arg>locked_out_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:34.684" level="INFO">Typing text 'locked_out_user' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:34.683" endtime="20210921 09:25:34.844"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${SENHA}</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:34.845" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20210921 09:25:34.922" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210921 09:25:35.017" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210921 09:25:34.844" endtime="20210921 09:25:35.017"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:35.018" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:35.017" endtime="20210921 09:25:35.095"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:34.683" endtime="20210921 09:25:35.096"/>
+</kw>
+<kw name="Validar mensagem de usuário bloqueado" library="keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${MENSAGEM_BLOQUEADO}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210921 09:25:35.111" level="INFO">Current page contains element 'xpath://h3[contains(text(),'Epic sadface: Sorry, this user has been locked out.')]'.</msg>
+<status status="PASS" starttime="20210921 09:25:35.097" endtime="20210921 09:25:35.111"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:35.096" endtime="20210921 09:25:35.111"/>
+</kw>
+<kw name="Fechar navegador" library="base">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210921 09:25:35.112" endtime="20210921 09:25:37.313"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:35.112" endtime="20210921 09:25:37.314"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:30.738" endtime="20210921 09:25:37.316"/>
+</test>
+<test id="s1-s1-t2" name="Realizar uma compra completa com mais de um produto no carrinho">
+<kw name="Acessar URL" library="base">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210921 09:25:37.323" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20210921 09:25:37.322" endtime="20210921 09:25:39.650"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:37.321" endtime="20210921 09:25:39.651"/>
+</kw>
+<kw name="Login com usuário válido" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USUARIO}</arg>
+<arg>standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:39.652" level="INFO">Typing text 'standard_user' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:39.652" endtime="20210921 09:25:39.802"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${SENHA}</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:39.803" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20210921 09:25:39.880" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210921 09:25:39.969" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210921 09:25:39.803" endtime="20210921 09:25:39.969"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:39.970" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:39.969" endtime="20210921 09:25:40.119"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:39.651" endtime="20210921 09:25:40.120"/>
+</kw>
+<kw name="Realizar uma compra com mais de um produto" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MOCHILA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:40.122" level="INFO">Clicking element 'xpath://*[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:40.121" endtime="20210921 09:25:40.224"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LANTERNA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:40.225" level="INFO">Clicking element 'xpath://*[@id="add-to-cart-sauce-labs-bike-light"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:40.224" endtime="20210921 09:25:40.304"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CARRINHO_COMPRAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:40.305" level="INFO">Clicking element 'xpath://*[@id="shopping_cart_container"]/a/span'.</msg>
+<status status="PASS" starttime="20210921 09:25:40.305" endtime="20210921 09:25:40.520"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CHECKOUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:40.521" level="INFO">Clicking element 'xpath://*[@id="checkout"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:40.520" endtime="20210921 09:25:40.625"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${NOME}</arg>
+<arg>Marcelo</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:40.627" level="INFO">Typing text 'Marcelo' into text field 'xpath://*[@id="first-name"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:40.626" endtime="20210921 09:25:40.772"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SOBRENOME}</arg>
+<arg>Gromboni</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:40.773" level="INFO">Typing text 'Gromboni' into text field 'xpath://*[@id="last-name"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:40.773" endtime="20210921 09:25:40.945"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CEP}</arg>
+<arg>17207460</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:40.946" level="INFO">Typing text '17207460' into text field 'xpath://*[@id="postal-code"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:40.945" endtime="20210921 09:25:41.080"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CONTINUE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:41.080" level="INFO">Clicking element 'xpath://*[@id="continue"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:41.080" endtime="20210921 09:25:41.197"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FINISH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:41.198" level="INFO">Clicking element 'xpath://*[@id="finish"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:41.197" endtime="20210921 09:25:41.269"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:40.120" endtime="20210921 09:25:41.269"/>
+</kw>
+<kw name="Fechar navegador" library="base">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210921 09:25:41.270" endtime="20210921 09:25:43.450"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:41.270" endtime="20210921 09:25:43.451"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:37.319" endtime="20210921 09:25:43.453"/>
+</test>
+<test id="s1-s1-t3" name="Adicionar todos os produtos ao carrinho e validar o valor total da compra a ser pago">
+<kw name="Acessar URL" library="base">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210921 09:25:43.460" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20210921 09:25:43.458" endtime="20210921 09:25:45.381"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:43.457" endtime="20210921 09:25:45.381"/>
+</kw>
+<kw name="Login com usuário válido" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USUARIO}</arg>
+<arg>standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:45.383" level="INFO">Typing text 'standard_user' into text field 'xpath://*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:45.383" endtime="20210921 09:25:45.615"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${SENHA}</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:45.616" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20210921 09:25:45.679" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210921 09:25:45.771" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210921 09:25:45.615" endtime="20210921 09:25:45.772"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:45.773" level="INFO">Clicking button 'xpath://*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:45.772" endtime="20210921 09:25:45.956"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:45.382" endtime="20210921 09:25:45.956"/>
+</kw>
+<kw name="Realizar compra com todos os produtos e validar valor total" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MOCHILA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:45.958" level="INFO">Clicking element 'xpath://*[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:45.958" endtime="20210921 09:25:46.031"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LANTERNA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:46.031" level="INFO">Clicking element 'xpath://*[@id="add-to-cart-sauce-labs-bike-light"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:46.031" endtime="20210921 09:25:46.087"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CAMISA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:46.088" level="INFO">Clicking element 'xpath://*[@id="add-to-cart-sauce-labs-bolt-t-shirt"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:46.087" endtime="20210921 09:25:46.139"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BLUSA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:46.140" level="INFO">Clicking element 'xpath://*[@id="add-to-cart-sauce-labs-fleece-jacket"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:46.140" endtime="20210921 09:25:46.196"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MACACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:46.197" level="INFO">Clicking element 'xpath://*[@id="add-to-cart-sauce-labs-onesie"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:46.196" endtime="20210921 09:25:46.253"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CAMISA_VERMELHA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:46.255" level="INFO">Clicking element 'xpath://*[@id="add-to-cart-test.allthethings()-t-shirt-(red)"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:46.254" endtime="20210921 09:25:46.307"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CARRINHO_COMPRAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:46.308" level="INFO">Clicking element 'xpath://*[@id="shopping_cart_container"]/a/span'.</msg>
+<status status="PASS" starttime="20210921 09:25:46.307" endtime="20210921 09:25:46.382"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CHECKOUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:46.383" level="INFO">Clicking element 'xpath://*[@id="checkout"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:46.382" endtime="20210921 09:25:46.463"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${NOME}</arg>
+<arg>Marcelo</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:46.464" level="INFO">Typing text 'Marcelo' into text field 'xpath://*[@id="first-name"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:46.463" endtime="20210921 09:25:46.652"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SOBRENOME}</arg>
+<arg>Gromboni</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:46.653" level="INFO">Typing text 'Gromboni' into text field 'xpath://*[@id="last-name"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:46.653" endtime="20210921 09:25:46.817"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CEP}</arg>
+<arg>17207460</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:46.818" level="INFO">Typing text '17207460' into text field 'xpath://*[@id="postal-code"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:46.817" endtime="20210921 09:25:46.974"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CONTINUE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:46.975" level="INFO">Clicking element 'xpath://*[@id="continue"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:46.974" endtime="20210921 09:25:47.069"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${TOTAL_COMPRA}</arg>
+<arg>Total: $140.34</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210921 09:25:47.070" level="INFO">Verifying element 'xpath://*[@id="checkout_summary_container"]/div/div[2]/div[7]' contains exact text 'Total: $140.34'.</msg>
+<status status="PASS" starttime="20210921 09:25:47.069" endtime="20210921 09:25:47.104"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FINISH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210921 09:25:47.105" level="INFO">Clicking element 'xpath://*[@id="finish"]'.</msg>
+<status status="PASS" starttime="20210921 09:25:47.105" endtime="20210921 09:25:47.174"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:45.957" endtime="20210921 09:25:47.175"/>
+</kw>
+<kw name="Fechar navegador" library="base">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210921 09:25:47.177" endtime="20210921 09:25:49.361"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:47.176" endtime="20210921 09:25:49.362"/>
+</kw>
+<status status="PASS" starttime="20210921 09:25:43.456" endtime="20210921 09:25:49.364"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210921 09:25:49.368" endtime="20210921 09:25:49.369"/>
+</kw>
+<doc>Suite dos testes</doc>
+<status status="PASS" starttime="20210921 09:25:30.427" endtime="20210921 09:25:49.369"/>
+</suite>
+<status status="PASS" starttime="20210921 09:25:30.390" endtime="20210921 09:25:49.375"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Testes">Testes</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="testsCases">Testes.testsCases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
